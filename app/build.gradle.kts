@@ -38,6 +38,11 @@ android {
 
     buildFeatures {
         dataBinding = true
+        viewBinding = true
+    }
+    dependenciesInfo {
+        includeInApk = true
+        includeInBundle = true
     }
 }
 
