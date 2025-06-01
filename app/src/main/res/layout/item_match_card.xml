@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/iv_user_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/placeholder_circle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:src="@tools:sample/avatars"
+                android:contentDescription="@string/user_profile_image" />
+
+            <TextView
+                android:id="@+id/tv_user_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="?android:attr/textColorPrimary"
+                app:layout_constraintTop_toBottomOf="@id/iv_user_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="John Doe, 28, New York" />
+
+            <TextView
+                android:id="@+id/tv_match_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:textColor="@color/purple_700"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_details"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Match: 85%" />
+
+            <TextView
+                android:id="@+id/tv_education"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/tv_match_score"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Education: Bachelor's Degree" />
+
+            <TextView
+                android:id="@+id/tv_religion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/tv_education"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Religion: Christian" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:text="ACCEPTED"
+                tools:textColor="@android:color/holo_green_dark"
+                app:layout_constraintTop_toBottomOf="@id/tv_religion"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layout_action_buttons"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintTop_toBottomOf="@id/tv_status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <Button
+                    android:id="@+id/btn_decline"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/decline"
+                    android:textColor="@android:color/holo_red_dark"
+                    app:strokeColor="@android:color/holo_red_dark"/>
+
+                <Button
+                    android:id="@+id/btn_accept"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/accept"
+                    android:textColor="@android:color/holo_green_dark"
+                    app:strokeColor="@android:color/holo_green_dark"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
